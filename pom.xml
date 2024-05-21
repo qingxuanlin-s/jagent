@@ -11,7 +11,8 @@
   <url>http://maven.apache.org</url>
   <modules>
     <module>jagent-demo</module>
-    <module>jagent-premain</module>
+    <module>jagent-bytebuddy</module>
+    <module>jagent-javasisit</module>
   </modules>
 
   <properties>

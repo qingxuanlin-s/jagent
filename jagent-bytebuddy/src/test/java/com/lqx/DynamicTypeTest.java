@@ -54,7 +54,7 @@ public class DynamicTypeTest {
 
     @Test
     @DisplayName("重新加载class")
-    void testReloadClass() throws IllegalAccessException, InstantiationException {
+    void testReloadClass() {
         ByteBuddyAgent.install();
         new ByteBuddy()
                 .redefine(Foo.class)
