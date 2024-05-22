@@ -12,6 +12,6 @@ public class TestJAVAsisit {
         Foo myClass = new Foo();
         System.out.println(myClass.sayHelloFoo());
 
-        TimeUnit.SECONDS.sleep(1000);
+        TimeUnit.SECONDS.sleep(10000);
     }
 }

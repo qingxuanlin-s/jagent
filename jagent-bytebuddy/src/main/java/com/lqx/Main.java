@@ -6,6 +6,8 @@ import net.bytebuddy.dynamic.DynamicType;
 import net.bytebuddy.implementation.FixedValue;
 import net.bytebuddy.matcher.ElementMatchers;
 
+import java.util.concurrent.TimeUnit;
+
 /**********************
  *
  * @Description TODO
@@ -15,19 +17,11 @@ import net.bytebuddy.matcher.ElementMatchers;
 public class Main {
     @SneakyThrows
     public static void main(String[] args) {
-        DynamicType.Unloaded unloadedType = new ByteBuddy()
-                .subclass(Object.class)
-                .method(ElementMatchers.isToString())
-                .intercept(FixedValue.value("Hello World ByteBuddy!"))
-                .make();
 
-        Class<?> dynamicType = unloadedType.load(Main.class.getClassLoader()).getLoaded();
-
-        Object o = dynamicType.newInstance();
-
-        System.out.println(o);
+        Foo f = new Foo();
+        System.out.println(f.sayHelloFoo());
 
 
-
+        TimeUnit.SECONDS.sleep(10000);
     }
 }
