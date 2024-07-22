@@ -12,7 +12,12 @@ import lombok.Data;
 public class Foo {
 
     public String sayHelloFoo() {
-        return "Hello in Foo!";
+        return "Hello!";
+    }
+
+
+    public String sayHelloFoo(String name) {
+        return "Hello!" + name;
     }
 
 }
