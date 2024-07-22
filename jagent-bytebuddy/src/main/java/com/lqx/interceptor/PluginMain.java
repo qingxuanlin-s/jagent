@@ -40,7 +40,6 @@ public class PluginMain {
         Foo foo = new Foo();
         foo.sayHelloFoo("world");
 
-        //撤销加强
         // 动态撤销增强
         new ByteBuddy()
                 .redefine(fooClass, ClassFileLocator.Simple.of(fooClass.getName(), originalClassDefinition))
