@@ -8,7 +8,7 @@ import com.sun.tools.javac.util.Context;
 public class JavaJST {
     public static void main(String[] args) {
         ScannerFactory instance = ScannerFactory.instance(new Context());
-        Scanner scanner = instance.newScanner("System.out.println(\"Hello, world!\");", false);
+        Scanner scanner = instance.newScanner("for (Integer integer : x) {       yBuilder.append(\" \").append(integer);  }", false);
 
         while (true) {
             scanner.nextToken();
