@@ -26,7 +26,7 @@ public class ForTest {
             //m.insertBefore("   for(int i = 0; i<x.size(); i++){           yBuilder.append(\" \").append(x.get(i));  }");
 
             m.insertBefore("  for (Integer integer : x) {       yBuilder.append(\" \").append(integer);  }");
-
+            //m.insertBefore("x.forEach(integer -> yBuilder.append(\" \").append(integer));");
 
             cc.writeFile("/Users/mrfox/IdeaProjects/jagent-new/classes");
             cc.toClass(ForTest.class.getClassLoader());

@@ -12,7 +12,8 @@ public class TestFor {
     }
 
     public  String hello(List<Integer> x,StringBuilder yBuilder){
-        for (Integer integer : x) {       yBuilder.append(" ").append(integer);  }
+        //for (Integer integer : x) {       yBuilder.append(" ").append(integer);  }
+        //x.forEach(integer -> yBuilder.append(" ").append(integer));
         return yBuilder.toString();
     }
 
