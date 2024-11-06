@@ -32,13 +32,13 @@ public class PluginMain {
         // 动态增强类
         new ByteBuddy()
                 .redefine(Foo.class)
-                .visit(Advice.to(Plugin.class).on(ElementMatchers.named("sayHelloFoo")))
+                .visit( Advice.to(Plugin.class).on(ElementMatchers.named("sayHelloFoo")))
                 .make()
                 .load(Foo.class.getClassLoader(), ClassReloadingStrategy.fromInstalledAgent());
 
 
         Foo foo = new Foo();
-        foo.sayHelloFoo("world");
+        foo.sayHelloFoo("Foo");
 
         // 动态撤销增强
         new ByteBuddy()

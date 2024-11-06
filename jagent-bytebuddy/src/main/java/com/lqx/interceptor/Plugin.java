@@ -4,6 +4,8 @@ import net.bytebuddy.asm.Advice;
 
 import java.util.Arrays;
 
+import static net.bytebuddy.implementation.bytecode.assign.Assigner.Typing.DYNAMIC;
+
 public class Plugin {
 
     /**
@@ -17,13 +19,24 @@ public class Plugin {
     @Advice.OnMethodEnter()
     public static void  beforeMethod(
             @Advice.Origin String method, @Advice.AllArguments Object[] args) {
-        System.out.println("Entering method: " + method);
-        System.out.println("Arguments: " + Arrays.toString(args));
+        System.out.println("进入方法: " + method);
+        System.out.println("参数: " + Arrays.toString(args));
     }
 
-    @Advice.OnMethodExit
-    public static void onExit(@Advice.Origin String method) {
-        System.out.println("Exiting method: " + method);
+//    @Advice.OnMethodExit
+//    public static void onExit(@Advice.Origin String method,@Advice.Return Object result
+//            ) {
+//        System.out.println("退出方法: " + method);
+//    }
+//
+
+    @Advice.OnMethodExit(onThrowable = Throwable.class)
+    public static void onExitWithException(@Advice.Origin String method,@Advice.Return Object result,
+                                           @Advice.Thrown Throwable exceptions
+            ){
+        System.out.println("退出方法: " + method + " 响应: " + result + " 异常: " + exceptions);
     }
+
+
 
 }

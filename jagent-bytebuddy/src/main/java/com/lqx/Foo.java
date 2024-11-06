@@ -17,6 +17,9 @@ public class Foo {
 
 
     public String sayHelloFoo(String name) {
+        if (name.contains("Foo")) {
+            throw new IllegalArgumentException("Name cannot contain 'Foo'");
+        }
         return "Hello!" + name;
     }
 
