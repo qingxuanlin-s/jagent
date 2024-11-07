@@ -20,7 +20,6 @@ public class ReCodeUtil {
         cc.toClass();
         Foo myClass = new Foo();
         System.out.println(myClass.sayHelloFoo());
-
     }
 
     /***

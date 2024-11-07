@@ -10,7 +10,7 @@
   <name>jagent</name>
   <url>http://maven.apache.org</url>
   <modules>
-    <module>jagent-demo</module>
+    <module>jagent-asm</module>
     <module>jagent-bytebuddy</module>
     <module>jagent-javasisit</module>
   </modules>
