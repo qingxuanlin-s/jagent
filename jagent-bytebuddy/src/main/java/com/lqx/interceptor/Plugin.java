@@ -30,7 +30,7 @@ public class Plugin {
 //    }
 //
 
-    @Advice.OnMethodExit(onThrowable = Throwable.class)
+    @Advice.OnMethodExit(onThrowable = Throwable.class,inline = false)
     public static void onExitWithException(@Advice.Origin String method,@Advice.Return Object result,
                                            @Advice.Thrown Throwable exceptions
             ){

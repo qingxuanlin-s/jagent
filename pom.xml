@@ -13,6 +13,8 @@
     <module>jagent-asm</module>
     <module>jagent-bytebuddy</module>
     <module>jagent-javasisit</module>
+    <module>agent/jagent-premain</module>
+    <module>agent/jagennt-premain-test</module>
   </modules>
 
   <properties>

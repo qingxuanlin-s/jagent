@@ -9,6 +9,7 @@ import net.bytebuddy.dynamic.ClassFileLocator;
 import net.bytebuddy.dynamic.loading.ClassReloadingStrategy;
 import net.bytebuddy.matcher.ElementMatchers;
 
+import java.util.Timer;
 import java.util.concurrent.TimeUnit;
 
 /**********************
@@ -38,8 +39,11 @@ public class PluginMain {
 
 
         Foo foo = new Foo();
-        foo.sayHelloFoo("Foo");
+        foo.sayHelloFoo("Fo");
 
+
+        TimeUnit.SECONDS.sleep(1000);
+        System.out.println("开始撤销增强。。。。");
         // 动态撤销增强
         new ByteBuddy()
                 .redefine(fooClass, ClassFileLocator.Simple.of(fooClass.getName(), originalClassDefinition))
