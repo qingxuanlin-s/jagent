@@ -23,16 +23,22 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.6.0</version>
                 <configuration>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
                     <archive>
                         <manifestEntries>
+                            <!--静态加载(premain) Agent 时的入口类-->
                             <Premain-Class>com.lqx.PreMainAgent</Premain-Class>
-                            <Agent-Class>com.lqx.PreMainAgent</Agent-Class>
+                            <!--动态加载(agentmain) Agent 时的入口类-->
+<!--                            <Agent-Class>com.lqx.PreMainAgent</Agent-Class>-->
+                            <!-- 是否允许修改 Native 方法的前缀。Native 方法不是字节码实现的，Agent 修改不了它的逻辑。通常修改 Native 是Proxy 的做法，把原有的 Native 方法重命名，新建同名的 Java 方法来调用老方法。此时需要修改 Native 方法前缀的能力。-->
                             <Can-Set-Native-Method-Prefix>true</Can-Set-Native-Method-Prefix>
+                            <!-- 是否允许重新定义类。Agent 可以重新定义类的字节码，并在运行时加载。-->
                             <Can-Redefine-Classes>true</Can-Redefine-Classes>
+                            <!-- 该 Agent 能否修改已有类的行为。-->
                             <Can-Retransform-Classes>true</Can-Retransform-Classes>
                         </manifestEntries>
                     </archive>

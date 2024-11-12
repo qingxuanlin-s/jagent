@@ -15,8 +15,5 @@ public class PreMainAgent {
         System.out.println("premain");
     }
 
-    public static void agentmain(String agentArgs, Instrumentation inst) {
-        System.out.println("agentmain");
-    }
 
 }
