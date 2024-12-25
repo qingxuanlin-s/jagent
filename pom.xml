@@ -8,13 +8,14 @@
   <packaging>pom</packaging>
 
   <name>jagent</name>
-  <url>http://maven.apache.org</url>
+  
   <modules>
     <module>jagent-asm</module>
     <module>jagent-bytebuddy</module>
     <module>jagent-javasisit</module>
     <module>agent/jagent-premain</module>
     <module>agent/jagennt-premain-test</module>
+    <module>jagent-domain</module>
     <module>apply/jagent-code-stat</module>
     <module>apply/jagent-code-test</module>
   </modules>

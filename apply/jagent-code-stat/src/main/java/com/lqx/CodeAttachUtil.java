@@ -55,8 +55,10 @@ public class CodeAttachUtil {
                     methodTmp = method.toString();
                 }
             }
+            if(methodTmp == null){
+                throw new IllegalArgumentException("方法不存在");
+            }
 
-            assert methodTmp != null;
 
             byte[] originalClassDefinition = new ByteBuddy()
                     .redefine(fooClass)
