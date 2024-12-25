@@ -1,8 +1,5 @@
 package com.lqx;
 
-import java.lang.invoke.MethodHandle;
-import java.lang.invoke.MethodHandles;
-
 /**********************
  *
  * @Description TODO
@@ -11,7 +8,6 @@ import java.lang.invoke.MethodHandles;
  ***********************/
 public class Main {
     public static void main(String[] args) {
-
         System.out.println("Hello world!");
     }
 }
