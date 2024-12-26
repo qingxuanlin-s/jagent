@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 import static com.lqx.CodeAttachUtil.dyncClassLoader;
 
-public class DisruptorCollect {
+public class StackCollect {
     public static final LinkedBlockingQueue<Runnable> RUNNABLES = new LinkedBlockingQueue<>();
 
     public static final ExecutorService EXECUTOR = new ThreadPoolExecutor(0, 5,
@@ -18,11 +18,7 @@ public class DisruptorCollect {
 
 
     static {
-        try {
-            dyncClassLoader.loadClass("com.lqx.plugins.collect.StackRunner");
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+        dyncClassLoader.loadClass("com.lqx.plugins.collect.StackRunner",true);
     }
 
     @SneakyThrows
@@ -36,7 +32,7 @@ public class DisruptorCollect {
         tupleTrack.setFirst(cname);
         tupleTrack.setSecond(stackTrace);
 
-        StackRunner stackRunner = (StackRunner) (dyncClassLoader.loadClass("com.lqx.plugins.collect.StackRunner").newInstance());
+        StackRunner stackRunner = (StackRunner) (dyncClassLoader.findClass("com.lqx.plugins.collect.StackRunner").newInstance());
         stackRunner.setTupleTrack(tupleTrack);
 
         EXECUTOR.submit(stackRunner);

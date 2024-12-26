@@ -77,7 +77,7 @@ public class CodeAttachUtil {
             String finalMethodTmp = methodTmp;
 
             EXECUTOR.schedule(()->{
-                System.out.println("撤销注入：" + cName);
+                System.out.println("撤销注入，开始汇总结果：" + cName);
                 // 动态撤销增强
                 new ByteBuddy()
                         .redefine(fooClass, ClassFileLocator.Simple.of(fooClass.getName(), originalClassDefinition))
