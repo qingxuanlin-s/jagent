@@ -1,12 +1,12 @@
-package com.xyz.zz;
+package com.xyz.code;
+
+import com.lqx.CodeAttachUtil;
 
 import java.util.concurrent.TimeUnit;
 
 public class TestCodeInv {
     @lombok.SneakyThrows
     public static void main(String[] args) {
-
-
         new Thread(()->{
             for (int i = 0; i < 10000; i++) {
                 try {

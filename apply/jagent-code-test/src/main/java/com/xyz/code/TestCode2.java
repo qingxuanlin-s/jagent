@@ -1,4 +1,4 @@
-package com.xyz.zz;
+package com.xyz.code;
 
 public class TestCode2 {
 

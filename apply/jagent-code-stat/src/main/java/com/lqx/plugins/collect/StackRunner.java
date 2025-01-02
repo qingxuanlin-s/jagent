@@ -34,6 +34,7 @@ public class StackRunner implements Runnable {
 
     @Override
     public void run() {
+        long currentTimeMillis = System.currentTimeMillis();
         int x = 1;
         StringBuilder stacks = new StringBuilder();
         for (int i = 0; i < tupleTrack.second.length; i++) {
@@ -56,5 +57,6 @@ public class StackRunner implements Runnable {
                 .computeIfAbsent(stacks.toString(), new ImapFun2());
         computeIfAbsent.incrementAndGet();
 
+        System.out.println(System.currentTimeMillis() - currentTimeMillis);
     }
 }

@@ -17,8 +17,10 @@ public class StackCollect {
             0L, TimeUnit.MILLISECONDS, RUNNABLES);
 
 
+    private static final String CLAZZ_NAME = "com.lqx.plugins.collect.StackRunner";
+
     static {
-        dyncClassLoader.loadClass("com.lqx.plugins.collect.StackRunner",true);
+        dyncClassLoader.loadClass(CLAZZ_NAME,true);
     }
 
     @SneakyThrows
@@ -32,10 +34,11 @@ public class StackCollect {
         tupleTrack.setFirst(cname);
         tupleTrack.setSecond(stackTrace);
 
-        StackRunner stackRunner = (StackRunner) (dyncClassLoader.findClass("com.lqx.plugins.collect.StackRunner").newInstance());
+        StackRunner stackRunner = (StackRunner) (dyncClassLoader.findClass(CLAZZ_NAME).newInstance());
         stackRunner.setTupleTrack(tupleTrack);
+        stackRunner.run();
 
-        EXECUTOR.submit(stackRunner);
+        //EXECUTOR.submit(stackRunner);
 
     }
 
