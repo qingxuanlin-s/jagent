@@ -1,6 +1,5 @@
 package com.xyz.code;
 
-import com.lqx.CodeAttachUtil;
 
 import java.util.concurrent.TimeUnit;
 

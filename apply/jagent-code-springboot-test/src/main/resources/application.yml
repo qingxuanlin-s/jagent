@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: jagent-code-springboot-test
+server:
+  port: 8080
