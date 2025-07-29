@@ -10,30 +10,21 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>jagent-code-test</artifactId>
+    <artifactId>jbytecode-basic-test</artifactId>
 
     <properties>
-        <maven.compiler.source>24</maven.compiler.source>
-        <maven.compiler.target>24</maven.compiler.target>
+        <maven.compiler.source>20</maven.compiler.source>
+        <maven.compiler.target>20</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+
+
     <dependencies>
-
-        <dependency>
-            <groupId>com.lqx</groupId>
-            <artifactId>jagent-code-stat</artifactId>
-            <version>1.0</version>
-        </dependency>
-
-
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.30</version>
-            <scope>provided</scope>
         </dependency>
     </dependencies>
-
 </project>

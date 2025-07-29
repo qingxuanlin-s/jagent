@@ -18,6 +18,7 @@
     <module>jagent-domain</module>
     <module>apply/jagent-code-stat</module>
     <module>apply/jagent-code-test</module>
+      <module>jbytecode/jbytecode-basic-test</module>
   </modules>
 
   <properties>
